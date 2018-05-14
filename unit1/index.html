@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <h3>金額加總</h3>
+    <div>
+        <div>
+            <span>金額：</span>
+            <input type="text" id="price" name="price" value="">
+        </div>
+        <div>
+            <span>數量：</span>
+            <input type="text" id="quantity" name="quantity" value="">
+        </div>
+        <button id="js_count" class="js-count">金額計算</button>
+        結果：<span id="total"></span>
+    </div>
+    
+
+    <script src="dist/bundle.js"></script>
+
+    <script>
+
+        const button = document.querySelector("#js_count");
+        const totaltext = document.querySelector("#total");
+        const priceInput = document.querySelector('#price');
+        const quantityInput = document.querySelector('#quantity');
+
+        priceInput.addEventListener("change",function(){
+            price = priceInput.value;
+        });
+
+        quantityInput.addEventListener("change",function(){
+            quantity = quantityInput.value;
+        });
+
+        console.log(price,quantity);
+        button.addEventListener("click", function(){
+            
+            totaltext.innerText =  getTotal(price,quantity);
+        });
+    </script>
+</body>
+</html>
